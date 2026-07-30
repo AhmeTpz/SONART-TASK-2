@@ -1,0 +1,95 @@
+import type { ErpRow, ReportProfile } from "@/lib/types";
+
+export const erpProfile: ReportProfile<ErpRow> = {
+  id: "sonart-stock-sales",
+  version: "1.2.1",
+  locale: "tr-TR",
+  fields: {
+    stok_kodu: {
+      aliases: ["stok_kodu", "stok kodu", "stokkodu", "sku", "urun_kodu"],
+      type: "text",
+      required: true,
+    },
+    urun_adi: {
+      aliases: ["urun_adi", "ürün adı", "urun adi", "urunadi", "stok_adi"],
+      type: "text",
+      required: true,
+    },
+    kategori: {
+      aliases: ["kategori", "urun_kategorisi", "ürün kategorisi"],
+      type: "text",
+      required: true,
+    },
+    depo: {
+      aliases: ["depo", "depo_adi", "depo adı", "lokasyon"],
+      type: "text",
+      required: true,
+    },
+    donem: {
+      aliases: ["donem", "dönem", "ay", "yil_ay", "yıl ay"],
+      type: "period",
+      required: true,
+    },
+    giris_miktar: {
+      aliases: ["giris_miktar", "giriş miktar", "giris miktari", "giriş_miktarı"],
+      type: "number",
+      required: false,
+      nullable: true,
+      minimum: 0,
+    },
+    cikis_miktar: {
+      aliases: ["cikis_miktar", "çıkış miktar", "cikis miktari", "çıkış_miktarı"],
+      type: "number",
+      required: false,
+      nullable: true,
+      minimum: 0,
+    },
+    donem_sonu_stok: {
+      aliases: ["donem_sonu_stok", "dönem sonu stok", "kapanis_stok", "kapanış stok"],
+      type: "number",
+      required: false,
+      nullable: true,
+      minimum: 0,
+    },
+    birim_maliyet_tl: {
+      aliases: ["birim_maliyet_tl", "birim maliyet", "maliyet_tl", "maliyet"],
+      type: "number",
+      required: false,
+      nullable: true,
+      minimum: 0,
+    },
+    birim_satis_tl: {
+      aliases: ["birim_satis_tl", "birim satış tl", "birim_satis", "satış fiyatı"],
+      type: "number",
+      required: false,
+      nullable: true,
+      minimum: 0,
+    },
+  },
+  naturalKey: ["stok_kodu", "depo", "donem"],
+  groupKey: ["stok_kodu", "depo"],
+  periodField: "donem",
+  imputation: {
+    birim_maliyet_tl: { method: "edge-fill", maxGapPeriods: 1 },
+    birim_satis_tl: { method: "edge-fill", maxGapPeriods: 1 },
+  },
+  inventoryBridge: {
+    inputField: "giris_miktar",
+    outputField: "cikis_miktar",
+    stockField: "donem_sonu_stok",
+    maxGapPeriods: 1,
+    minStableObservations: 3,
+    stableCoefficientOfVariation: 0.05,
+    maxReconciliationAdjustmentRatio: 0.25,
+  },
+  masterData: {},
+  consistencyFields: ["urun_adi", "kategori"],
+  riskThresholds: {
+    criticalCoverageMonths: 0.5,
+    lowStockUnits: 50,
+    slowCoverageMonths: 6,
+    lowMarginRatio: 0.25,
+    marginDropPoints: 5,
+    costJumpRatio: 0.1,
+  },
+};

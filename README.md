@@ -1,34 +1,34 @@
 # Sonart AI-Vision Basic
 
-Sonart AI-Vision Basic, Logo Netsis benzeri çok dönemli stok ve satış CSV'lerini yönetim kararına dönüştüren Track B uygulamasıdır. Sistem veri kalitesi sorunlarını analizden önce görünür biçimde ele alır; ciro, kârlılık, stok ve ürün performansını seçilen rapor kapsamına göre hesaplar. Dashboard, açıklanabilir kural sinyallerini ürün ve depo ayrıntılarıyla sunarken Gemini doğrulanmış metriklerden yönetici değerlendirmesi ve kanıta dayalı aksiyon planları üretir. Kullanıcı dönem seçimini değiştirdiğinde analitik sonuçlar, riskler ve AI raporu aynı zaman kapsamına göre yeniden oluşturulur.
+Sonart AI-Vision Basic, Logo Netsis benzeri çok dönemli stok ve satış CSV'lerini yönetim kararına dönüştüren Track-B uygulamasıdır. Sistem veri kalitesi sorunlarını analizden önce görünür biçimde ele alır; ciro, kârlılık, stok ve ürün performansını seçilen rapor kapsamına göre hesaplar. Dashboard, açıklanabilir kural sinyallerini ürün ve depo ayrıntılarıyla sunarken Gemini doğrulanmış metriklerden yönetici değerlendirmesi ve kanıta dayalı aksiyon planları üretir. Kullanıcı dönem seçimini değiştirdiğinde analitik sonuçlar, riskler ve AI raporu aynı zaman kapsamına göre yeniden oluşturulur.
 
 ![Sonart AI-Vision Basic masaüstü görünümü](docs/screenshots/desktop-overview.png)
 
-## Proje bağlantıları
+## Proje Bağlantıları
 
 - **Canlı uygulama:** [sonartvision.vercel.app](https://sonartvision.vercel.app)
 - **Kaynak kod:** [github.com/AhmeTpz/SONART-Track-B](https://github.com/AhmeTpz/SONART-Track-B)
-- **Ekran kaydı:** 1–2 dakikalık video bağlantısı teslim öncesinde eklenecektir.
+- **Ekran kaydı:** [youtu.be/VfeGj9HUi64](https://www.youtube.com/watch?v=VfeGj9HUi64)
 
-## Track B tercihi ve problem kapsamı
+## Track-B Tercihi ve Problem Kapsamı
 
-Track B'yi veri mühendisliği, zaman serisi analizi, açıklanabilir iş kuralları ve AI destekli yönetim raporlamasını aynı iş probleminde birleştirdiği için seçtim. ERP raporundaki eksik, kopya veya hatalı bir kayıt stok, maliyet ve kârlılık yorumunu doğrudan etkileyebildiğinden çözümü yalnız demo CSV'yi görselleştiren bir ekran olarak değil, farklı ürün, depo ve dönem sayılarını aynı kurallarla işleyebilen profil tabanlı bir yapı olarak tasarladım. Veri işleme ve analitik kararları; ürün koduna, kaynak satır numarasına veya sabit dönem sayısına bağlı olmayan, sürümlü `ReportProfile` politikaları üzerine kuruldu.
+Track-B'yi veri mühendisliği, zaman serisi analizi, açıklanabilir iş kuralları ve AI destekli yönetim raporlamasını aynı iş probleminde birleştirdiği için seçtim. ERP raporundaki eksik, kopya veya hatalı bir kayıt stok, maliyet ve kârlılık yorumunu doğrudan etkileyebildiğinden çözümü yalnız demo CSV'yi görselleştiren bir ekran olarak değil, farklı ürün, depo ve dönem sayılarını aynı kurallarla işleyebilen profil tabanlı bir yapı olarak tasarladım. Veri işleme ve analitik kararları; ürün koduna, kaynak satır numarasına veya sabit dönem sayısına bağlı olmayan, sürümlü politikalar üzerine kuruldu.
 
 Uygulama bu teslimde stok-satış rapor profilini uygular. Aynı çekirdek; farklı kolon, doğal anahtar, veri tipi, kalite politikası ve risk eşikleri tanımlayan yeni profillerle diğer departman raporlarına genişletilebilir.
 
-## Çözüm kapsamı
+## Çözüm Kapsamı
 
-- Veriden dinamik çıkarılan dönemler ile tek ay ve `Tüm Dönemler` görünümleri
-- Ciro, brüt kâr, ciro ağırlıklı marj, satış miktarı ve kapanış stoku KPI'ları
-- Satış/stok trendi, kategori performansı, ürün ciro payı ve stok verimliliği grafikleri
-- Tüm portföy özeti ile ürün/depo bazında ayrıntılı dönem analizi
-- Kritik stok, yavaş/hareketsiz stok, düşük marj, marj daralması ve maliyet artışı sinyalleri
-- Encoding, Türkçe karakter, şema, kopya, doğal anahtar, sınır değer ve eksik dönem kontrolleri
-- Kontrollü stok-köprüsü çıkarımı ve alan bazında veri işlem geçmişi
-- Gemini ile yapılandırılmış yönetici değerlendirmesi ve 2–4 maddelik öncelikli aksiyon planı
-- Responsive arayüz ve grafiklerin kesin değer tablolarıyla desteklendiği A4 yatay PDF görünümü
+- Veriden dinamik çıkarılan dönemler ile tek ay ve `Tüm Dönemler` görünümleri.
+- Ciro, brüt kâr, ciro ağırlıklı marj, satış miktarı ve kapanış stoku KPI'ları.
+- Satış/stok trendi, kategori performansı, ürün ciro payı ve stok verimliliği grafikleri.
+- Tüm portföy özeti ile ürün/depo bazında ayrıntılı dönem analizi.
+- Kritik stok, yavaş/hareketsiz stok, düşük marj, marj daralması ve maliyet artışı sinyalleri.
+- Encoding, Türkçe karakter, şema, kopya, doğal anahtar, sınır değer ve eksik dönem kontrolleri.
+- Kontrollü stok-köprüsü çıkarımı ve alan bazında veri işlem geçmişi.
+- Gemini ile yapılandırılmış yönetici değerlendirmesi ve 2–4 maddelik öncelikli aksiyon planı.
+- Responsive arayüz ve grafiklerin kesin değer tablolarıyla desteklendiği A4 yatay PDF görünümü.
 
-## Teknoloji ve mimari kararlar
+## Teknoloji ve Mimari Kararlar
 
 | Teknoloji | Kullanım gerekçesi |
 | --- | --- |
@@ -42,9 +42,9 @@ Uygulama bu teslimde stok-satış rapor profilini uygular. Aynı çekirdek; fark
 
 Frontend, veri işleme çekirdeği ve AI endpoint'i aynı Next.js uygulamasında bulunur. Gemini anahtarı yalnız sunucu tarafındaki `POST /api/analyze` route'unda okunur; tarayıcıya veya istemci paketine aktarılmaz.
 
-## AI model seçimi ve alternatif değerlendirmesi
+## AI Model Seçimi ve Alternatif Değerlendirmesi
 
-Birincil model olarak kararlı sürüm `gemini-3.5-flash-lite` seçildi. Google bu modeli düşük gecikme, yüksek hacimli veri işleme ve yapılandırılmış çıktı gerektiren iş yükleri için konumlandırmaktadır. Uygulamanın ihtiyacı da ham veride serbest muhakeme yapmak değil; deterministik olarak hazırlanmış ERP özetini JSON şemasına uygun, hızlı ve düşük maliyetli bir yönetim raporuna dönüştürmektir.
+Pazar araştırmasında gerek ücretsiz katman genişliği, gerekse uygulanabilirliği en uygun olan Gemini modeli ile ilerleme karar kılındı. Birincil model olarak ise kararlı sürüm `gemini-3.5-flash-lite` seçildi. Google bu modeli düşük gecikme, yüksek hacimli veri işleme ve yapılandırılmış çıktı gerektiren iş yükleri için konumlandırmaktadır. Uygulamanın ihtiyacı da ham veride serbest muhakeme yapmak değil; deterministik olarak hazırlanmış ERP özetini JSON şemasına uygun, hızlı ve düşük maliyetli bir yönetim raporuna dönüştürmektir.
 
 | Model | Değerlendirme | Karar |
 | --- | --- | --- |
@@ -80,7 +80,7 @@ Eksik stok değeri iki ayın ortalaması alınarak doldurulmaz. Motor, ürün-de
 
 ![Veri güvenilirliği ve işlem geçmişi](docs/screenshots/data-quality-details.png)
 
-## Dönemsel analitik sözleşmesi
+## Dönemsel Analiz Sözleşmesi
 
 - Tek ay görünümünde akış metrikleri yalnız seçili aya aittir.
 - Tek ay stok kapsamı, seçili ayın çıkış miktarı ve seçili ay kapanış stokuyla hesaplanır.
@@ -91,7 +91,7 @@ Eksik stok değeri iki ayın ortalaması alınarak doldurulmaz. Motor, ürün-de
 - Tüm dönemler maliyet ve marj değişimi yalnız raporun gerçek ilk ve son dönemlerinde kaydı bulunan ürünler için ilk–son karşılaştırmasıyla hesaplanır.
 - Son dönem ürün/depo kapsamı eksikse eski stok yeni aya taşınmaz ve kullanıcıya `INCOMPLETE_LATEST_PERIOD` uyarısı gösterilir.
 
-## Açıklanabilir risk motoru
+## Açıklanabilir Risk Motoru
 
 Temel metrikler ve profil eşikleri:
 
@@ -107,7 +107,7 @@ Temel metrikler ve profil eşikleri:
 
 Riskler AI tarafından değil, sürümlü [`ReportProfile`](lib/types.ts) eşiklerinden deterministik olarak üretilir. Kritik stok kapsamı hesaplanabildiğinde aynı ürün için ayrıca birim bazlı düşük stok sinyali açılmaz. `Tüm Dönemler` görünümünde aynı ürün/risk türü aylara göre tekrarlanmaz; sinyal bütün tarih aralığının tanımlı hesaplama kapsamını temsil eder.
 
-## AI raporlama sözleşmesi
+## AI Raporlama Sözleşmesi
 
 API yalnız `{ "scope": "ALL" | "YYYY-MM" }` isteğini kabul eder ve dönem değerini temiz veri kümesine göre doğrular. Ham CSV modele gönderilmez. Gemini bağlamı; deterministik KPI'lar, dönem karşılaştırmaları, kategori ve ürün katkıları, portföy yoğunlaşması, kural sinyalleri ve veri kalite özetinden oluşturulur.
 
@@ -115,7 +115,7 @@ Tek ay ve tüm dönemler için ayrı görev promptları kullanılır. Kural moto
 
 Model çıktısı JSON Schema ve Zod ile doğrulanır. Aksiyon hedefleri, ürün kodları ve ürün bazlı kanıtlar arasında tutarlılık aranır; hedefte bulunmayan bir ürün koduna ait kanıt veya zorunlu karar alanlarından daha az aksiyon içeren cevap kabul edilmez. Başarılı raporlar `dataVersion + kapsam` anahtarıyla tarayıcı oturumunda saklanır; veri veya profil sürümü değiştiğinde eski rapor kullanılmaz.
 
-## Kurulum ve çalıştırma
+## Kurulum ve Çalıştırma
 
 Gereksinimler: Node.js 22–24, npm ve geçerli bir Gemini API anahtarı.
 
@@ -137,11 +137,11 @@ npm run dev
 
 Uygulama `http://localhost:3000` adresinde açılır. `.env.local` Git'e dahil edilmez.
 
-## Temel mühendislik zorluğu
+## Temel Mühendislik Zorluğu
 
 En zor teknik karar, eksik giriş/çıkış/stok değerlerini görsel olarak makul fakat stok denklemine aykırı bir sonuç üretmeden tamamlamaktı. Akış ölçülerini birbirinden bağımsız doğrusal interpolasyonla doldurmak stok sürekliliğini bozabildiğinden, tahmin ile fiziksel stok denklemini birlikte kullanan stok-köprüsünü geliştirdim. Otomatik işlem yalnız profilin istikrar, takvim komşuluğu ve mutabakat koşulları sağlandığında uygulanır; belirsiz durumda kayıt değiştirilmez.
 
-## Ölçeklenebilirlik ve üretim ortamı yol haritası
+## Ölçeklenebilirlik ve Üretim Ortamı Yol Haritası
 
 300+ departman raporu hedefinde ingestion çekirdeğini kopyalamak yerine her rapor ailesi için kanonik alanları, alias'ları, doğal anahtarı, eksik değer politikalarını, master-data kurallarını ve risk eşiklerini tanımlayan yeni bir `ReportProfile` eklenir. Ürün kodları, dönemler veya demo satır numaraları üretim kararlarına koşul olarak yazılmaz.
 
@@ -155,7 +155,7 @@ En zor teknik karar, eksik giriş/çıkış/stok değerlerini görsel olarak mak
 - AI çağrılarına merkezi cache, rate limit, maliyet bütçesi ve düzenli kalite değerlendirme setleri eklemek
 - Log, metrik ve alarm akışını merkezi gözlemlenebilirlik altyapısına bağlamak
 
-## Doğrulama kapsamı
+## Doğrulama Kapsamı
 
 ```bash
 npm test
@@ -169,11 +169,11 @@ Demo CSV yalnız regresyon fixture'ı olarak kullanılır: 91 ham kayıttan 90 d
 
 ![Mobil dönem görünümü](docs/screenshots/mobile-period.png)
 
-## Mevcut kapsam sınırları
+## Mevcut Kapsam Sınırları
 
 - Veri kaynağı deployment içindeki demo CSV'dir; kullanıcı dosya yükleme ve canlı ERP senkronizasyonu bu teslimin kapsamında değildir.
-- Yeni CSV içeriğinin kullanılabilmesi için yeni build/deployment gerekir.
+- Yeni, güncellenmiş CSV içeriğinin kullanılabilmesi için yeni build/deployment gerekir.
 - AI raporu için sunucu tarafında `GEMINI_API_KEY` bulunmalıdır.
 - AI cache'i tarayıcı oturumu bazlıdır; dağıtık kalıcı cache kullanılmaz.
 - PDF çıktısı tarayıcının yazdırma/PDF altyapısını kullanır.
-- Veri üzerinde serbest soru-cevap arayüzü bonus kapsam dışında bırakılmıştır.
+- Veri üzerinde serbest soru-cevap arayüzü bonusu kapsam dışında bırakılmıştır.
